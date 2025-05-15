@@ -1,0 +1,24 @@
+INFORME DE REUNIÓN
+
+Fecha: Thu May 15 19:20:34 GMT-04:00 2025
+Hora prevista de inicio: 2025-05-15T23:20:34.926946100Z
+Hora de inicio: 2025-05-15T23:20:34.928951800Z
+Hora de fin: 2025-05-15T23:20:44.946351Z
+Duración: 1 hora y 30 minutos.
+Tipo de reunión: TECNICA
+Modalidad: Presencial
+Sala: Sala 2030
+
+Lista de participantes: 
+ - Nombre : Agustin   Apellido : Salgado   Correo : agsalgado2023@udec.cl   Departamento : Devs
+ - Nombre : Ignacio   Apellido : Silva   Correo : ignaciosilva2023@udec.cl   Departamento : Devs
+ - Nombre : Jota pe   Apellido : Pablo   Correo : jotape2024@udec.cl   Departamento : Devs
+
+Lista de retrasos: 
+ - El empleado Ignacio Silva se ha retrasado 9 segundos
+ - El empleado Jota pe Pablo se ha retrasado 9 segundos
+
+Lista de  ausentes: 
+
+
+2025-05-15T23:20:34.928951800Z - Iniciada la reunion

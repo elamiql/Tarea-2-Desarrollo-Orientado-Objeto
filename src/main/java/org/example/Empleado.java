@@ -123,6 +123,14 @@ public class Empleado implements Invitable {
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
+    /**
+     * Obtiene el departamento del empleado.
+     *
+     * @return Departamento.
+     */
+    public String getDepartamento() {
+        return departamento;
+    }
 
     /**
      *  Representacion escrita del empleado.

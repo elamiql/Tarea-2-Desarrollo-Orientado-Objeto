@@ -1,27 +1,53 @@
 package org.example;
 
+import java.awt.*;
 import java.time.*;
 import java.util.Date;
 
-import static java.time.temporal.ChronoUnit.SECONDS;
-
 public class Main {
     public static void main(String[] args) {
-        Empleado e1 = new Empleado("123", "Salgado Espinoza", "Agustín", "agsalgado2023@udec.cl");
-        InvitadoExterno a = new InvitadoExterno("Pepe","Tapia","as");
-        System.out.println(a);
-        ReunionPresencial reunion = new ReunionPresencial(new Date(), Instant.now(), Duration.of(10,  SECONDS), e1, tipoReunion.MARKETING, "Sala 2023");
-        Empleado a2= new Empleado("12", "Silva","Javier", "osd@gmai.com");
-        reunion.iniciar();
-        reunion.agregarParticipante(a2);
+        Departamento developers = new Departamento("Devs");
 
-        System.out.println(reunion);
-        reunion.agregarNota("Hola mundo");
-        reunion.agregarNota("Anashe");
-        reunion.agregarNota("Corte");
-        reunion.agregarParticipante(a);
-        reunion.finalizar();
-        Informe.generarinforme(reunion, "informe.txt");
+        Empleado agustin = new Empleado("217", "Salgado", "Agustin", "agsalgado2023@udec.cl");
+        Empleado ignacio = new Empleado("216", "Silva", "Ignacio", "ignaciosilva2023@udec.cl");
+        Empleado juanpablo = new Empleado("215", "Pablo", "Jota pe", "jotape2024@udec.cl");
 
+        developers.agregarEmpleado(agustin);
+        developers.agregarEmpleado(ignacio);
+        developers.agregarEmpleado(juanpablo);
+
+        Date fecha = new Date();
+        Instant horaPrevista = Instant.now();
+        Duration duracionPrevista = Duration.ofMinutes(90);
+
+        ReunionPresencial reunionPresencial = new ReunionPresencial(fecha, horaPrevista, duracionPrevista, agustin, tipoReunion.TECNICA, "Sala 2030");
+
+        reunionPresencial.agregarParticipante(developers);
+
+        reunionPresencial.agregarNota("Iniciada la reunion");
+
+        reunionPresencial.iniciar();
+
+        reunionPresencial.registrarAsistencia(agustin, horaPrevista);
+        reunionPresencial.registrarAsistencia(ignacio, horaPrevista.plusSeconds(10));
+        reunionPresencial.registrarAsistencia(juanpablo, horaPrevista.plusSeconds(10));
+
+        try {
+            Thread.sleep(10*1000);
+        }
+        catch (InterruptedException e){
+            Thread.currentThread().interrupt();
+            System.out.println("Interrumpida");
+        }
+
+        reunionPresencial.listaNotas();
+
+        reunionPresencial.finalizar();
+
+        Informe.generarInforme(reunionPresencial, "informe_1.txt");
+
+        System.out.println("Participantes: " + reunionPresencial.getParticipantes().size());
+        System.out.println("Asistencias: " + reunionPresencial.getAsistencias().size());
+        System.out.println("Retrasos: " + reunionPresencial.obtenerRetrasos().size());
     }
 }

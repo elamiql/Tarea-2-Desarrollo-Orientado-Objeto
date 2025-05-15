@@ -70,37 +70,39 @@ public abstract class Reunion {
      * @param empleado Empleado que asiste.
      * @param horaDeLlegada Hora de llegada.
      */
-    public void registrarAsistencia(Empleado empleado, Instant horaDeLlegada) {
-        if (this.horaInicio == null) {
+    public void registrarAsistencia(Empleado empleado, Instant horaDeLlegada){
+        if (this.horaInicio == null){
             System.out.println("La reunion no comienza aun.");
             return;
         }
 
-        if (!participantes.contains(empleado)) {
+        if (!participantes.contains(empleado)){
             System.out.println("El empleado " + empleado + "no esta invitado.");
             return;
         }
 
-        for (Asistencia asistenciaTrue : asistencias) {
-            if (asistenciaTrue.getEmpleado().equals(empleado)) {
+        for (Asistencia asistenciaTrue : asistencias){
+            if (asistenciaTrue.getEmpleado().equals(empleado)){
                 System.out.println("La asistencia de " + empleado + "ya se marco.");
+                return;
             }
-            return;
         }
 
         boolean asistio;
-        Asistencia nuevaAsistencia;
-        if (horaDeLlegada.isBefore(horaInicio.plusSeconds(10))) {
+        if (horaDeLlegada.isBefore(horaInicio.plusSeconds(5))){
             asistio = true;
-            nuevaAsistencia = new Asistencia(empleado, asistio, horaDeLlegada);
-        } else {
+        } else{
             asistio = false;
-            nuevaAsistencia = new Retraso(empleado, horaDeLlegada, this.horaInicio);
         }
 
+        Asistencia nuevaAsistencia;
+        if (asistio){
+            nuevaAsistencia = new Asistencia(empleado, true, horaDeLlegada);
+        } else{
+            nuevaAsistencia = new Retraso(empleado, horaDeLlegada, this.horaInicio);
+        }
         this.asistencias.add(nuevaAsistencia);
     }
-
 
     /**
      * Obtiene la lista de empleados que asistieron puntualmente.
@@ -189,11 +191,10 @@ public abstract class Reunion {
      * @param participante Participante a invitar
      */
     public void agregarParticipante(Invitable participante) {
-        if (!participantes.contains(participante)) {
+        if (participante instanceof Departamento dpto){
+            participantes.addAll(dpto.getEmpleados());
+        }else{
             participantes.add(participante);
-            Invitacion invitacion = new Invitacion(participante, this, Instant.now());
-            invitaciones.add(invitacion);
-            invitacion.enviarInvitacion();
         }
     }
     /**
