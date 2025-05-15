@@ -11,8 +11,17 @@ public class Main {
         InvitadoExterno a = new InvitadoExterno("Pepe","Tapia","as");
         System.out.println(a);
         ReunionPresencial reunion = new ReunionPresencial(new Date(), Instant.now(), Duration.of(10,  SECONDS), e1, tipoReunion.MARKETING, "Sala 2023");
+        Empleado a2= new Empleado("12", "Silva","Javier", "osd@gmai.com");
+        reunion.iniciar();
+        reunion.agregarParticipante(a2);
 
-        reunion.agregarParticipante(a);
         System.out.println(reunion);
+        reunion.agregarNota("Hola mundo");
+        reunion.agregarNota("Anashe");
+        reunion.agregarNota("Corte");
+        reunion.agregarParticipante(a);
+        reunion.finalizar();
+        Informe.generarinforme(reunion, "informe.txt");
+
     }
 }

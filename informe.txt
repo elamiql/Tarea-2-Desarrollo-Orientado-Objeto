@@ -1,0 +1,21 @@
+INFORME DE REUNIÓN
+-------------------
+Fecha: Thu May 15 15:03:33 GMT-04:00 2025
+Hora prevista de inicio: 2025-05-15T19:03:33.407082905Z
+Hora de inicio: 2025-05-15T19:03:33.408321332Z
+Hora de fin: 2025-05-15T19:03:33.491676663Z
+Duración: PT10S
+Tipo de reunión: MARKETING
+Sala: Sala 2023
+Los participantes son: [Empleado {
+  id = 12
+  apellidos = Silva
+  nombre = Javier
+  correo = osd@gmai.com
+  departamento = null
+}, Pepe Tapia (as)]
+Retrasos: []
+Las notas son: 
+2025-05-15T19:03:33.490808980Z - Hola mundo
+2025-05-15T19:03:33.490822836Z - Anashe
+2025-05-15T19:03:33.490825461Z - Corte

@@ -148,14 +148,14 @@ public abstract class Reunion {
      * @return Lista de empleados con retraso
      */
     public List<Empleado> obtenerRetrasos() {
-        List<Empleado> retrasados = new ArrayList<>();
+        List<Empleado> retrasos = new ArrayList<>();
 
         for (Asistencia asistencia : asistencias) {
             if (asistencia instanceof Retraso) {
-                retrasados.add(asistencia.getEmpleado());
+                retrasos.add(asistencia.getEmpleado());
             }
         }
-        return retrasados;
+        return retrasos;
     }
     /**
      * Calcula el porcentaje de asistencia respecto al total de participantes.
@@ -388,4 +388,5 @@ public abstract class Reunion {
     public void setParticipantes(List<Invitable> participantes){
         this.participantes = participantes;
     }
+
 }
