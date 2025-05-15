@@ -89,9 +89,13 @@ public class Informe {
 
             writer.write("\n");
 
-            writer.write("Lista de  ausentes: \n");
+            writer.write("Lista de ausentes: \n");
+
             List<Empleado> empleadosAusentes = reunion.obtenerAusencias();
 
+            if (empleadosAusentes.isEmpty()){
+                writer.write(" - No hay ausentes");
+            }
             for (Empleado empleado : empleadosAusentes) {
                 writer.write(" - Nombre : " + empleado.getNombre() + "   Apellido : " + empleado.getApellidos() + "   Correo : " +empleado.getCorreo() + "   Departamento : " +empleado.getDepartamento() +"\n");
             }
@@ -99,6 +103,7 @@ public class Informe {
 
             List<Nota> notasOrdenadas = new ArrayList<>(reunion.getNotas());
             notasOrdenadas.sort(Comparator.comparing(Nota::getTime));
+            writer.write("Notas de la reunion: \n");
 
             for (Nota nota : notasOrdenadas) {
                 writer.println(nota.getTime() + " - " + nota.getContenido());
