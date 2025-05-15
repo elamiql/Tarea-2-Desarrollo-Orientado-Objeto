@@ -223,25 +223,7 @@ public abstract class Reunion {
             System.out.println(nota.getContenido());
         }
     }
-    /**
-     * Representación de la reunion en texto.
-     */
-    @Override
-    public String toString() {
-        return "Reunion {\n" +
-                "  fecha = " + fecha + ",\n" +
-                "  horaPrevista = " + horaPrevista + ",\n" +
-                "  duracionPrevista = " + duracionPrevista + ",\n" +
-                "  horaInicio = " + horaInicio + ",\n" +
-                "  horaFin = " + horaFin + ",\n" +
-                "  asistencias = " + asistencias + ",\n" +
-                "  invitaciones = " + invitaciones + ",\n" +
-                "  notas = " + notas + ",\n" +
-                "  organizador = " + organizador + ",\n" +
-                "  tipoReunion = " + tipoReunion + ",\n" +
-                "  participantes = " + participantes + "\n" +
-                '}';
-    }
+
     /**
      * Obtiene la fecha de la reunión.
      * @return Fecha de la reunión.

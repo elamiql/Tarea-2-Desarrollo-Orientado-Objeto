@@ -49,12 +49,19 @@ public class ReunionPresencial extends Reunion{
     @Override
     public String toString() {
         return "ReunionPresencial {\n" +
-                "  fecha = " + getFecha() + "\n" +
-                "  horaPrevista = " + getHoraPrevista() + "\n" +
-                "  duracionPrevista = " + getDuracionPrevista() + "\n" +
-                "  organizador = " + getOrganizador() + "\n" +
-                "  tipoReunion = " + getTipoReunion() + "\n" +
-                "  sala = " + sala + "\n" +
+                "  fecha = " + getFecha() + ",\n" +
+                "  horaPrevista = " + getHoraPrevista() + ",\n" +
+                "  duracionPrevista = " + getDuracionPrevista() + ",\n" +
+               "  horaInicio = " + getHoraInicio() + ",\n" +
+                "  horaFin = " + getHoraFin() + ",\n" +
+                "  asistencias = " + getAsistencias() + ",\n" +
+               "  notas = " + getNotas() + ",\n" +
+                "  organizador = " + getOrganizador() + ",\n" +
+               "  tipoReunion = " + getTipoReunion() + ",\n" +
+                "  participantes = " + getParticipantes() + ",\n" +
+                "  sala = " + getSala() + "\n" +
                 "}";
     }
+
+
 }

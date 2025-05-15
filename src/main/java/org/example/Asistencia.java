@@ -86,7 +86,7 @@ public class Asistencia{
      *
      * @param asistio true si asistió, false si no.
      */
-    public void setAsistio(){
+    public void setAsistio(boolean asistio){
         this.asistio = asistio;
     }
 }

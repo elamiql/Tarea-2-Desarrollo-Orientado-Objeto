@@ -52,12 +52,19 @@ public class ReunionVirtual extends Reunion {
     @Override
     public String toString() {
         return "ReunionVirtual {\n" +
-                "  fecha = " + getFecha() + "\n" +
-                "  horaPrevista = " + getHoraPrevista() + "\n" +
-                "  duracionPrevista = " + getDuracionPrevista() + "\n" +
-                "  organizador = " + getOrganizador() + "\n" +
-                "  tipoReunion = " + getTipoReunion() + "\n" +
-                "  enlace = " + enlace + "\n" +
+                "  fecha = " + getFecha() + ",\n" +
+                "  horaPrevista = " + getHoraPrevista() + ",\n" +
+                "  duracionPrevista = " + getDuracionPrevista() + ",\n" +
+                "  horaInicio = " + getHoraInicio() + ",\n" +
+                "  horaFin = " + getHoraFin() + ",\n" +
+                "  asistencias = " + getAsistencias() + ",\n" +
+                "  notas = " + getNotas() + ",\n" +
+                "  organizador = " + getOrganizador() + ",\n" +
+                "  tipoReunion = " + getTipoReunion() + ",\n" +
+                "  participantes = " + getParticipantes() + ",\n" +
+                "  enlace = " + getEnlace() + "\n" +
                 "}";
     }
+
+
 }
