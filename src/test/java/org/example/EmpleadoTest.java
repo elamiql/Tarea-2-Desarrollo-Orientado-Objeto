@@ -2,7 +2,10 @@ package org.example;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Date;
@@ -26,45 +29,53 @@ class EmpleadoTest {
         reunionPresencial = new ReunionPresencial(fecha,horaPrevista,duracionPrevista,ignacio,tipoReunion.MARKETING,"1");
     }
 
-    @test
+    @Test
     public void testGetter(){
-        assertequals("224",empleado.getId());
-        assertequals("Nuñez",empleado.getApellidos());
-        assertequals("Juan",empleado.getNombre());
-        assertequals("jununez2024@udec",empleado.getCorreo());
-        assertequals(departamento,empleado.getDepartamento());
+        assertEquals("224",empleado.getId());
+        assertEquals("Nuñez",empleado.getApellidos());
+        assertEquals("Juan",empleado.getNombre());
+        assertEquals("jununez2024@udec",empleado.getCorreo());
+        assertEquals(departamento,empleado.getDepartamento());
     }
 
-    @test
+    @Test
     public void testSetter(){
         empleado.setId("324");
         empleado.setApellidos("Guzman");
         empleado.setNombre("Ignacio");
         empleado.setCorreo("Iguzman2024@udec");
         empleado.setDepartamento("ingeneria");
-        assertequals("324",empleado.getId());
-        assertequals("Guzman",empleado.getApellidos());
-        assertequals("Ignacio",empleado.getNombre());
-        assertequals("Iguzman2024@udec",empleado.getCorreo());
-        assertequals("ingeneria",empleado.getDepartamento());
+        assertEquals("324",empleado.getId());
+        assertEquals("Guzman",empleado.getApellidos());
+        assertEquals("Ignacio",empleado.getNombre());
+        assertEquals("Iguzman2024@udec",empleado.getCorreo());
+        assertEquals("ingeneria",empleado.getDepartamento());
     }
 
-    @test
+    @Test
     public void testInvitar(){
-        String result = empleado.invitar(reunionPresencial);
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        empleado.invitar(reunionPresencial);
+
+        System.setOut(System.out);
+
+        String output = outContent.toString();
+        assertTrue(output.contains("Invitación enviada a Juan vía email: jununez2024@udec con detalles: Estimado Juan Nuñez, está invitado a una reunión del tipo presencial en la sala: 1"));
 
     }
 
-    @test
+    @Test
     public void testToString(){
         String result = empleado.toString();
-        assertequals(result.contains("Empleado "));
-        assertequals(result.contains("  id = " + empleado.getId()));
-        assertequals(result.contains("  apellidos = " + empleado.getApellidos()));
-        assertequals(result.contains("  nombre = " + empleado.getNombre()));
-        assertequals(result.contains("  correo = " + empleado.getCorreo()));
-        assertequals(result.contains("  departamento = " + departamento));
-        assertequals(result.contains("}"));
+        assertTrue(result.contains("Empleado "));
+        assertTrue(result.contains("  id = " + empleado.getId()));
+        assertTrue(result.contains("  apellidos = " + empleado.getApellidos()));
+        assertTrue(result.contains("  nombre = " + empleado.getNombre()));
+        assertTrue(result.contains("  correo = " + empleado.getCorreo()));
+        assertTrue(result.contains("  departamento = " + departamento));
+        assertTrue(result.contains("}"));
     }
 
     @AfterEach
