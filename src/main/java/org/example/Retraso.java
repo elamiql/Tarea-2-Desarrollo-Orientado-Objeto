@@ -27,9 +27,7 @@ public class Retraso extends Asistencia{
      */
     @Override
     public String toString() {
-        return "Retraso {\n" +
-                "  duracionRetraso = " + duracionRetraso + "\n" +
-                "}";
+        return "Retraso{duracionRetraso=" + duracionRetraso + "}";
     }
     /**
      * Obtiene la duración del retraso.

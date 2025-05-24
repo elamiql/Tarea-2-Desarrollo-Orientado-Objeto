@@ -66,6 +66,6 @@ public class Nota {
      */
     @Override
     public String toString() {
-        return "Nota: " + contenido;
+        return "Nota{contenido='" + contenido + "'}";
     }
 }

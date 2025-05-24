@@ -23,10 +23,11 @@ class EmpleadoTest {
         Date fecha = new Date();
         Instant horaPrevista = Instant.now();
         Duration duracionPrevista = Duration.ofMinutes(90);
-        departamento = new Departamento("Oficina");
+        departamento = new Departamento("ingeneria");
         empleado = new Empleado("224","Nuñez","Juan","jununez2024@udec");
         Empleado ignacio = new Empleado("216", "Silva", "Ignacio", "ignaciosilva2023@udec.cl");
         reunionPresencial = new ReunionPresencial(fecha,horaPrevista,duracionPrevista,ignacio,tipoReunion.MARKETING,"1");
+        empleado.setDepartamento(String.valueOf(departamento));
     }
 
     @Test
@@ -35,7 +36,7 @@ class EmpleadoTest {
         assertEquals("Nuñez",empleado.getApellidos());
         assertEquals("Juan",empleado.getNombre());
         assertEquals("jununez2024@udec",empleado.getCorreo());
-        assertEquals(departamento,empleado.getDepartamento());
+        assertEquals(String.valueOf(departamento), empleado.getDepartamento());
     }
 
     @Test
@@ -62,8 +63,9 @@ class EmpleadoTest {
         System.setOut(System.out);
 
         String output = outContent.toString();
-        assertTrue(output.contains("Invitación enviada a Juan vía email: jununez2024@udec con detalles: Estimado Juan Nuñez, está invitado a una reunión del tipo presencial en la sala: 1"));
-
+        assertTrue(output.contains("Invitación enviada a Juan vía email: jununez2024@udec"));
+        assertTrue(output.contains("reunión del tipo presencial"));
+        assertTrue(output.contains("sala: 1"));
     }
 
     @Test

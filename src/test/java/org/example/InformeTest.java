@@ -68,8 +68,8 @@ class InformeTest {
         assertTrue(lines.stream().anyMatch(l -> l.contains("INFORME DE REUNIÓN")));
         assertTrue(lines.stream().anyMatch(l -> l.contains("Fecha: " + reunion.getFecha())));
         assertTrue(lines.stream().anyMatch(l -> l.contains("Sala: 3")));
-        assertTrue(lines.stream().anyMatch(l -> l.contains("Gómez")));
-        assertTrue(lines.stream().anyMatch(l -> l.contains("López")));
+        assertTrue(lines.stream().anyMatch(l -> l.contains("Salgado")));
+        assertTrue(lines.stream().anyMatch(l -> l.contains("Silva")));
         assertTrue(lines.stream().anyMatch(l -> l.contains("Notas de la reunion")));
     }
 

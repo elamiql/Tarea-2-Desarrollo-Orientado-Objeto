@@ -78,7 +78,6 @@ class ReunionTest {
 
         List<Empleado> ausentes = reunion.obtenerAusencias();
         assertTrue(ausentes.contains(juanpablo));
-        assertFalse(ausentes.contains(juanpablo));
     }
 
     @Test

@@ -76,7 +76,6 @@ public class Informe {
 
                         if (segundoss < 60) {
                             writer.write(" - El empleado " + empleado.getNombre() + " " + empleado.getApellidos() + " se ha retrasado " + segundos2 +" segundos\n");
-                            System.out.println("aca");
                         } else if (minutoss < 60){
                             writer.write(" - El empleado " + empleado.getNombre() + " " + empleado.getApellidos() + " se ha retrasado " + minutos2 +" minutos " + segundos2 +" segundos\n");
                         } else {
